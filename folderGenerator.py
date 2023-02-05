@@ -20,7 +20,7 @@ assignmentCount = IntVar()
 
 
 
-# define button click functions
+# define button click functions --------------------------------\
 def selectClassFolder():
     dir = filedialog.askdirectory()
     classFolder.set(dir)
@@ -58,10 +58,10 @@ def createFolders():
     classlistFile.set("")
     assignmentType.set("")
     assignmentCount.set(0)
-
+# ---------------------------------------------------------------/
     
     
-# creating all the display elements
+# creating all the display elements ------------------------------\
 label_classFolder = Label(text="Class Folder: ")
 entry_classFolderPath = Entry(window, textvariable = classFolder)
 button_explore1 = Button(window,
@@ -83,6 +83,7 @@ entry_assignmentCount = Entry(window, textvariable = assignmentCount)
 button_createFolders = Button(window,
                                 text = "Create Folders",
                                 command = createFolders)
+# ----------------------------------------------------------------/
 
 
 
