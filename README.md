@@ -1,3 +1,5 @@
+* Note: sortSubmissions.py expects the folder to already be set up in the 
+
 # folderGenerator.py
 This is a simple Python script that lets you quickly generate folders for each assignment, as well as folders for each student in each assignment. 
 The script will ask for the name of the class folder, the classlist csv file, the assignment type (Lab, Project, etc), and the number of that assignment. 
