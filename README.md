@@ -1,8 +1,6 @@
-* Please place the folder with this source code in the same directory as your course folders
-
 # folderGenerator.py
 This is a simple Python script that lets you quickly generate folders for each assignment, as well as folders for each student in each assignment. 
-The script will ask for the name of the class folder, the assignment type (Lab, Project, etc), and the number of that assignment. 
+The script will ask for the name of the class folder, the classlist csv file, the assignment type (Lab, Project, etc), and the number of that assignment. 
 It will then create a folder for each of those assignments (ex. Lab3)
 Inside each of those assignment folders, it will create a folder for each student.
 
@@ -10,10 +8,11 @@ Later, you can use sortSubmissions.py to sort all submissions into each student'
 
 
 ## How to Run:
-    1. Make sure to have a "classlist.csv" file in the class director with student's last name, first name
-        Ex. Mau Justin  
+    1. Make sure to have a "classlist.csv" file with students' last name, first name
+        (see provided example classlist.csv"  
     2. Run with "python3 *folderGenerator.py*
-    3. Follow the instructions on the console
+    3. Fill out the fields
+    4. Click "Create Folders" button
 
 
 # sortSubmissions.py
