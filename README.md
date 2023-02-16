@@ -9,7 +9,7 @@ Later, you can use sortSubmissions.py to sort all submissions into each student'
 
 ## How to Run:
     1. Make sure to have a "classlist.csv" file with students' last name, first name
-        (see provided example classlist.csv"  
+        (see provided example classlist.csv") 
     2. Run with "python3 *folderGenerator.py*
     3. Fill out the fields
     4. Click "Create Folders" button
@@ -27,10 +27,10 @@ Also, if some users submit zip files and others submit individual files, the who
 This program allows you to neatly organize all student submissions, as well as unpack all the zip files included.
 
 ## How to Run:
-    1. Make sure to have a "classlist.csv" file in the class directory with student's last name, first name
-        Ex. Mau Justin  
+    1. Make sure to have a "classlist.csv" file with students' last name, first name
+        (see provided example classlist.csv")  
     2. Download all submissions from D2L (.zip)
-    3. Extract that zip to a folder named "_submissions" in that assignment's directory
-    4. Run with "python3 sortSubmissions.py"
-    5. Follow the instructions on the console
+    3. Extract the .zip file
+    4. Run with *python3 sortSubmissions.py*
+    5. Fill out all the fields
     6. All files associated with each student's submission should now be in that student's respective folder
