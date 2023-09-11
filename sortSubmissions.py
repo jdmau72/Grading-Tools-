@@ -12,6 +12,7 @@ from tkinter import filedialog
 from tkinter import messagebox
 
 
+
 # ------------------------------------
 window = Tk()
 window.title('Sort Assignment Submissions')
@@ -21,9 +22,10 @@ classlistFile = StringVar()
 assignmentFolder = StringVar()
 submissionFolder = StringVar()
 
+simplifyFilenames_Y_N = BooleanVar()
 
 
-# define button click functions -------------------------------------\
+# define button click functions
 def selectAssignmentFolder():
     dir = filedialog.askdirectory()
     assignmentFolder.set(dir)
@@ -62,6 +64,11 @@ def sortSubmissions():
         print(f"{student}'s Submission Contents:")
         for file in fileList:
             if (file.find(student) != -1):
+                
+                # if check box selected, will try to remove the D2L auto-generated name
+                if (simplifyFilenames_Y_N.get() == TRUE):
+                    os.rename(file, file.split(" ")[-1])
+                    file = file.split(" ")[-1]
 
                 # moves the file from 
                 src_path = os.path.join(source, file)
@@ -69,6 +76,7 @@ def sortSubmissions():
                 shutil.move(src_path, dst_path)
                 
                 print(file)
+                # print(file.split(" ")[-1])
                 
                 # now extracts it if its a zip
                 if(file.endswith(".zip")):
@@ -77,12 +85,12 @@ def sortSubmissions():
                     zip.close()
                     os.remove(dst_path) # removes that zip file 
         print("-----------------------------------")
+    
+    print("\n All done!")
 
-    messagebox.showinfo("Message", "All done!")
-# --------------------------------------------------------------------/
     
     
-# creating all the display elements -----------------------------------\
+# creating all the display elements
 label_assignmentFolder = Label(text="Assignment Folder: ")
 entry_assignmentFolder = Entry(window, textvariable = assignmentFolder)
 button_explore1 = Button(window,
@@ -104,25 +112,34 @@ button_explore3 = Button(window,
 button_sortSubmissions = Button(window,
                                 text = "Sort Submissions",
                                 command = sortSubmissions)
-# ---------------------------------------------------------------------/
+
+
+check_rename = Checkbutton(window, 
+                           text = 'Simplify file names?',
+                           variable = simplifyFilenames_Y_N,
+                           onvalue= TRUE, offvalue= FALSE)
+
 
 
 # Sets the elements to the basic grid
-label_assignmentFolder.grid(column=1, row=1)
-entry_assignmentFolder.grid(column=2, row=1)
-button_explore1.grid(column = 3, row = 1)
+label_classlist.grid(column=1, row=1)
+entry_classlistFile.grid(column=2, row=1)
+button_explore2.grid(column = 3, row = 1)
 
-label_classlist.grid(column=1, row=2)
-entry_classlistFile.grid(column=2, row=2)
-button_explore2.grid(column = 3, row = 2)
+label_assignmentFolder.grid(column=1, row=2)
+entry_assignmentFolder.grid(column=2, row=2)
+button_explore1.grid(column = 3, row = 2)
 
 label_submissionsFolder.grid(column=1, row=3)
 entry_submissionsFolder.grid(column=2, row=3)
 button_explore3.grid(column = 3, row = 3)
 
-
 button_sortSubmissions.grid(column=4, row=5)
 
+check_rename.grid(column=0, row=5)
+
+# select checkbox so defaults to simplify file names
+check_rename.select()
 
 # -----------
 window.mainloop()   
