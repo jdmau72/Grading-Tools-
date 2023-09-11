@@ -19,7 +19,7 @@ Later, you can use sortSubmissions.py to sort all submissions into each student'
 
 # sortSubmissions.py
 This program can help you download all submissions from D2L and separate them neatly into each student's folder.
-It will also automatically extract any .zip files in the submissions.
+It will also automatically extract any .zip files in the submissions, and can remove the auto-generated filenames that get added to each submitted file.
 
 ### Why use this program?
 D2L allows you to download all user submission at once as a large zip file. 
