@@ -35,4 +35,5 @@ This program allows you to neatly organize all student submissions, as well as u
     3. Extract the .zip file
     4. Run with *python3 sortSubmissions.py*
     5. Fill out all the fields
+    6. Select whether or not to simplify the names (ex. "188236-729170 - Smith John - Sep 1, 2023 529 PM - HW1.java" -> "HW1.java"
     6. All files associated with each student's submission should now be in that student's respective folder
