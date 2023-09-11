@@ -1,4 +1,4 @@
-* Note: sortSubmissions.py expects the folder to already be set up in the 
+* Note: sortSubmissions.py expects the folder to already be set up in the format created by folderGenerator.py
 
 # folderGenerator.py
 This is a simple Python script that lets you quickly generate folders for each assignment, as well as folders for each student in each assignment. 
